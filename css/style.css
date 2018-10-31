@@ -1,0 +1,151 @@
+
+/*
+white = #fff
+yellow = #ffff9f
+pink = #fc80a5 
+purple = #bf8fcc
+blue = #76d7ea
+green = #99ff99
+*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Handlee', cursive; 
+  /*font-family: 'Handlee', cursive;
+  font-family: 'Architects Daughter', cursive; */
+}
+
+header {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  text-shadow: 10px -5px 0 #fc80a5;
+  color: white; 
+  height: 200px;
+  padding-top: 50px;
+  background-image: linear-gradient(to right, #fc80a5, #bf8fcc, #76d7ea, #99ff99, #ffff9f, #fc80a5);
+}
+
+main {
+  display: flex;
+  background-image: linear-gradient(to bottom right, #fc80a580, #bf8fcc80, #76d7ea80, #99ff9980, #ffff9f80);
+}
+
+.info, .board, .choices {
+  height: 600px;
+  margin: 50px;
+}
+
+.info {
+  width: 25%;
+  border: 1px solid black;
+}
+
+.board {
+  width: 35%;
+}
+
+.choices {
+  width: 10%;
+  font-size: 25px;
+}
+
+table {
+  height: 500px;
+  margin: 0 auto;
+  overflow-y: scroll;
+  position: static;
+  width: 90%;
+  background-color: rgb(126, 123, 123);
+}
+
+th {
+  background: rgb(152, 235, 228);
+  color: black;
+  font-family: 'Architects Daughter', cursive;;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+tr {
+  background: #e9e8e8;
+  border-bottom: 1px solid #000;
+  margin-bottom: 5px;
+  height: 40px;
+}
+
+th, td {
+  font-family: 'Architects Daughter', cursive;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  width: 16%;
+  height: 40px;
+}
+
+.board button, .info button {
+  width: 200px;
+  margin: 30px 220px; 
+  padding: 15px;
+  font-family: 'Architects Daughter', cursive; 
+  font-size: 20px;
+  color: #fc80a5;
+  font-weight: bold;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom right, #fc80a5, #bf8fcc, #76d7ea, #99ff99, #ffff9f);
+  text-shadow: 2px -1px 0 #555253;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.yellow {
+  background-color: #ffff9f;
+}
+
+.pink {
+  background-color: #fc80a5;
+}
+
+.purple {
+  background-color: #bf8fcc;
+}
+
+.blue {
+  background-color: #76d7ea;
+}
+
+.green {
+  background-color: #99ff99;
+}
+
+.black {
+  background-color: #575353;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  color: white;
+}
+
+.red {
+  background-color: #f16868;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  color: white;
+}
+
+.inactive {
+  pointer-events: none;
+}
+
+.active {
+  background-color: #f1e5e548;
+}
+

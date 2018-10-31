@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Handlee|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Rainbow Universe Unicorn MasterMind</title>
+
+  </head>
+
+  <body>
+    <header>
+      <h1>Rainbow Universe Unicorn MasterMind</h1>
+    </header>
+<main>
+    <section class="info">
+      <h2>Welcome to the Rainbow Universe MasterMind</h2>
+      <p>You need to select a location on the board and then the color you would like to pick</p>
+      <p>When you are happy with your selection, submit it</p>
+      <p>Can you read my colorful mind?</p>
+
+      <button>Start New Game</button>
+    </section>
+
+    <section class ="board">
+        <table>
+            <tr>
+              <th class="master0"></th>
+              <th class="master1"></th>
+              <th class="master2"></th>
+              <th class="master3"></th>
+              <th class="feedback0">Well placed</th>
+              <th class="feedback1">Badly placed</th>
+            </tr>
+            <tr>
+              <td id="0-0" class="inactive"> </td>
+              <td id="0-1" class="inactive"> </td>
+              <td id="0-2" class="inactive"> </td>
+              <td id="0-3" class="inactive"> </td>
+              <td id="0-4" class="inactive black"> </td>
+              <td id="0-5" class="inactive red"> </td>
+            </tr>
+            <tr>
+              <td id="1-0" class="inactive"></td>
+              <td id="1-1" class="inactive"></td>
+              <td id="1-2" class="inactive"></td>
+              <td id="1-3" class="inactive"></td>
+              <td id="1-4" class="inactive black"></td>
+              <td id="1-5" class="inactive red"></td>
+            </tr>
+            <tr>
+              <td id="2-0" class="inactive"></td>
+              <td id="2-1" class="inactive"></td>
+              <td id="2-2" class="inactive"></td>
+              <td id="2-3" class="inactive"></td>
+              <td id="2-4" class="inactive black"></td>
+              <td id="2-5" class="inactive red"></td>     
+            </tr>
+            <tr>
+              <td id="3-0" class="inactive"></td>
+              <td id="3-1" class="inactive"></td>
+              <td id="3-2" class="inactive"></td>
+              <td id="3-3" class="inactive"></td>
+              <td id="3-4" class="inactive black"></td>
+              <td id="3-5" class="inactive red"></td> 
+            </tr>
+            <tr>
+              <td id="4-0" class="inactive"></td>
+              <td id="4-1" class="inactive"></td>
+              <td id="4-2" class="inactive"></td>
+              <td id="4-3" class="inactive"></td>  
+              <td id="4-4" class="inactive black"></td>
+              <td id="4-5" class="inactive red"></td> 
+            </tr>
+            <tr>
+              <td id="5-0" class="inactive"></td>
+              <td id="5-1" class="inactive"></td>
+              <td id="5-2" class="inactive"></td>
+              <td id="5-3" class="inactive"></td> 
+              <td id="5-4" class="inactive black"></td>
+              <td id="5-5" class="inactive red"></td> 
+            </tr>
+            <tr>
+              <td id="6-0" class="inactive"></td>
+              <td id="6-1" class="inactive"></td>
+              <td id="6-2" class="inactive"></td>
+              <td id="6-3" class="inactive"></td>  
+              <td id="6-4" class="inactive black"></td>
+              <td id="6-5" class="inactive red"></td>
+            </tr>
+            <tr>
+              <td id="7-0" class="inactive"></td>
+              <td id="7-1" class="inactive"></td>
+              <td id="7-2" class="inactive"></td>
+              <td id="7-3" class="inactive"></td>
+              <td id="7-4" class="inactive black"></td>
+              <td id="7-5" class="inactive red"></td>
+            </tr>
+            <tr>
+              <td id="8-0" class="inactive"></td>
+              <td id="8-1" class="inactive"></td>
+              <td id="8-2" class="inactive"></td>
+              <td id="8-3" class="inactive"></td>
+              <td id="8-4" class="inactive black"></td>
+              <td id="8-5" class="inactive red"></td>
+            </tr>
+            <tr class="active">
+              <td id="9-0" class="inactive"></td>
+              <td id="9-1" class="inactive"></td>
+              <td id="9-2" class="inactive"></td>
+              <td id="9-3" class="inactive"></td>
+              <td id="9-4" class="inactive black"></td>
+              <td id="9-5" class="inactive red"></td>
+            </tr>
+          </table>
+          <button>Submit My Colors</button>
+    </section>
+
+    <section class="choices">
+     <table class="pick-colors">
+       <th>Pick your colors</th>
+        <tr>
+          <td class="color-btn white"></td> 
+        </tr>
+        <tr> 
+          <td class="color-btn yellow"></td>
+        </tr>
+        <tr> 
+          <td class="color-btn pink"></td> 
+        </tr>
+        <tr>
+          <td class="color-btn purple"></td>
+        </tr>
+        <tr>
+          <td class="color-btn blue"></td>
+        </tr>
+        <tr>
+          <td class="color-btn green"></td>
+        </tr>
+     </table>
+    </section>
+
+  </main>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

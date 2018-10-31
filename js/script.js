@@ -52,6 +52,17 @@ var square3 = $("#" + row + "-3");
    }
  });
 
+// Play again in the popup
+ var playAgainBtn = $(".restart");
+
+ playAgainBtn.click(function() {
+  resetGame();
+  refreshVars();
+  flushPlayerSelection();
+  generateMasterColors();
+  activateNTry();
+ });
+
 
 
 // Fonction qui active le choix des couleurs
@@ -206,24 +217,25 @@ function refreshVars() {
 
   function hasWon() {
     if (player.hasWon) {
+      $(".popup-won").addClass("showing");
       player.tries = 0;
       $(".master0").addClass(master.colors[0]);
       $(".master1").addClass(master.colors[1]);
       $(".master2").addClass(master.colors[2]);
       $(".master3").addClass(master.colors[3]);
-      alert("You have won!");
+
       console.log(master.colors);
     }
   } 
 
   function hasLost() {
     if (player.hasLost) {
+      $(".popup-lost").addClass("showing");
       player.tries = 0;
       $(".master0").addClass(master.colors[0]);
       $(".master1").addClass(master.colors[1]);
       $(".master2").addClass(master.colors[2]);
       $(".master3").addClass(master.colors[3]);
-      alert("Sorry, you have lost");
       console.log(master.colors);
     }
   }
@@ -309,6 +321,8 @@ function refreshVars() {
     $(".master1").removeClass("white yellow pink purple blue green");
     $(".master2").removeClass("white yellow pink purple blue green");
     $(".master3").removeClass("white yellow pink purple blue green");
+    $(".popup-lost").removeClass("showing");
+    $(".popup-win").removeClass("showing");
     master.colors = [];
     player.hasWon = false;
     player.hasLost = false;

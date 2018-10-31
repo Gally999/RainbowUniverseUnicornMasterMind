@@ -64,8 +64,10 @@ table {
   overflow-y: scroll;
   position: static;
   width: 90%;
-  background-color: rgb(126, 123, 123);
+  background-color: rgb(168, 168, 168);
 }
+
+
 
 th {
   background: rgb(152, 235, 228);
@@ -93,7 +95,7 @@ th, td {
   height: 40px;
 }
 
-.board button, .info button {
+.board button, .info button, .restart {
   width: 200px;
   margin: 30px;
   padding: 15px;
@@ -150,5 +152,70 @@ th, td {
 
 .active {
   background-color: #f1e5e548;
+}
+
+
+.popups {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 60%;
+}
+
+.popup-won {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 60%;
+  background-color: rgb(152, 235, 228);
+  color: black;
+  font-family: 'Architects Daughter', cursive; 
+  text-align: center; 
+  border-radius: 50px;
+  border: 3px solid #bf8fcc;
+}
+
+.popup-lost {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 60%;
+  background-color: rgb(152, 235, 228);
+  color: black;
+  font-family: 'Architects Daughter', cursive;
+  text-align: center; 
+  border-radius: 50px;
+  border: 3px solid #bf8fcc;
+}
+
+
+.happy-unicorn {
+  width: 320px;
+  height: 260px;
+  background-image: url("../img/thumbUp.webp");
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+.shit-happens {
+  width: 320px;
+  height: 260px;
+  background-image: url("../img/shitHappens.webp");
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+.showing {
+  opacity: 1;
+  position: absolute;
+  top: 60%;
+  left: 55%;
 }
 

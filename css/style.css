@@ -44,10 +44,13 @@ main {
 .info {
   width: 25%;
   border: 1px solid black;
+  font-size: 25px;
+  text-align: center;
 }
 
 .board {
   width: 35%;
+  text-align: center;
 }
 
 .choices {
@@ -92,7 +95,7 @@ th, td {
 
 .board button, .info button {
   width: 200px;
-  margin: 30px 220px; 
+  margin: 30px;
   padding: 15px;
   font-family: 'Architects Daughter', cursive; 
   font-size: 20px;

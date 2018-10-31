@@ -25,7 +25,9 @@ var square3 = $("#" + row + "-3");
 
  startBtn.click(function() {
    console.log("coucou start");
-   flushBoard();
+   resetGame();
+   refreshVars();
+   flushPlayerSelection();
    generateMasterColors();
    activateNTry();
  });
@@ -45,6 +47,7 @@ var square3 = $("#" + row + "-3");
      hasLost();
      flushPlayerSelection();
      incrementTries();
+     refreshVars()
      activateNTry();
    }
  });
@@ -149,16 +152,18 @@ function generateMasterColors() {
   // Adds up to the player.tries and refreshes the variables 
   function incrementTries() {
     player.tries++;
-    if (player.tries === 10) {
-      player.hasLost = true; 
-    } else {
-      row = 9 - player.tries;
-      square0 = $("#" + row + "-0");
-      square1 = $("#" + row + "-1");
-      square2 = $("#" + row + "-2");
-      square3 = $("#" + row + "-3");
-    }
   }
+function refreshVars() {
+  if (player.tries === 10) {
+    player.hasLost = true; 
+  } else {
+    row = 9 - player.tries;
+    square0 = $("#" + row + "-0");
+    square1 = $("#" + row + "-1");
+    square2 = $("#" + row + "-2");
+    square3 = $("#" + row + "-3");
+  }
+}
 
 
 // Active la rangée à cliquer + rend clickable chaque case 
@@ -201,7 +206,7 @@ function generateMasterColors() {
 
   function hasWon() {
     if (player.hasWon) {
-    
+      player.tries = 0;
       $(".master0").addClass(master.colors[0]);
       $(".master1").addClass(master.colors[1]);
       $(".master2").addClass(master.colors[2]);
@@ -213,7 +218,7 @@ function generateMasterColors() {
 
   function hasLost() {
     if (player.hasLost) {
-      
+      player.tries = 0;
       $(".master0").addClass(master.colors[0]);
       $(".master1").addClass(master.colors[1]);
       $(".master2").addClass(master.colors[2]);
@@ -295,9 +300,19 @@ function generateMasterColors() {
     player.choices = [];
   }
 
-  function flushBoard() {
+  function resetGame() {
     var boardSquares = $(".board td");
     boardSquares.removeClass("white yellow pink purple blue green");
+    boardSquares.addClass("inactive");
+    boardSquares.html("");
+    $(".master0").removeClass("white yellow pink purple blue green");
+    $(".master1").removeClass("white yellow pink purple blue green");
+    $(".master2").removeClass("white yellow pink purple blue green");
+    $(".master3").removeClass("white yellow pink purple blue green");
+    master.colors = [];
+    player.hasWon = false;
+    player.hasLost = false;
+    player.tries = 0;
   }
 
 
@@ -333,7 +348,6 @@ function generateMasterColors() {
     var feedbackRed = $("#"+row+"-5");
     if (blackCounter === 4) {
       player.hasWon = true;
-      player.tries = 0;
     } else {
       feedbackBlack.html(blackCounter);
       feedbackRed.html(redCounter);

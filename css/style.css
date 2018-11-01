@@ -21,6 +21,8 @@ body {
 }
 
 header {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
   font-family: 'Pacifico', cursive;
   font-size: 40px;
@@ -31,19 +33,28 @@ header {
   background-image: linear-gradient(to right, #fc80a5, #bf8fcc, #76d7ea, #99ff99, #ffff9f, #fc80a5);
 }
 
+.hello {
+  width: 310px;
+  height: 250px;
+  background-image: url("../img/Hi.webp");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  margin-right: -300px;
+}
+
 main {
   display: flex;
+  justify-content: space-evenly;
   background-image: linear-gradient(to bottom right, #fc80a580, #bf8fcc80, #76d7ea80, #99ff9980, #ffff9f80);
 }
 
 .info, .board, .choices {
   height: 600px;
-  margin: 50px;
+  margin: 50px -50px 50px -200px;
 }
 
 .info {
   width: 25%;
-  border: 1px solid black;
   font-size: 25px;
   text-align: center;
 }
@@ -66,8 +77,6 @@ table {
   width: 90%;
   background-color: rgb(168, 168, 168);
 }
-
-
 
 th {
   background: rgb(152, 235, 228);
@@ -209,6 +218,22 @@ th, td {
   background-image: url("../img/thumbUp.webp");
   background-size: 80%;
   background-repeat: no-repeat;
+}
+
+.good-luck {
+  display: none;
+  width: 320px;
+  height: 260px;
+  background-image: url("../img/goodLuck.webp");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 60%;
+  left: 86%;
+}
+
+.display {
+  display: block;
 }
 
 .shit-happens {

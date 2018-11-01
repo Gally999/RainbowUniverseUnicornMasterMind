@@ -37,6 +37,7 @@ startBtn.click(function() {
   refreshVars();
   activateNTry();
   activateBreathing();
+  displayGoodLuck();
 });
 
 
@@ -71,6 +72,7 @@ submitBtn.click(function() {
   refreshVars();
   activateNTry();
   activateBreathing();
+  displayGoodLuck();
  });
 
 function activateBreathing() {
@@ -406,7 +408,7 @@ function resetGame() {
   $(".master3").removeClass("white yellow pink purple blue green");
   $(".popup-lost").removeClass("showing");
   $(".popup-won").removeClass("showing");
-
+  $(".good-luck").removeClass("display");
   master.colors = [];
   player.hasWon = false;
   player.hasLost = false;
@@ -449,4 +451,8 @@ function compareSelections() {
 
 function startStopBreathing() {
   startBtn.removeClass("btn-breathe");
+}
+
+function displayGoodLuck() {
+  $(".good-luck").addClass("display");
 }

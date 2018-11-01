@@ -224,15 +224,13 @@ function incrementTries() {
 }
 
 function refreshVars() {
-  if (player.tries === 10) {
-    player.hasLost = true; 
-  } else {
+  if (player.tries < 10) {
     row = 9 - player.tries;
     square0 = $("#" + row + "-0");
     square1 = $("#" + row + "-1");
     square2 = $("#" + row + "-2");
     square3 = $("#" + row + "-3");
-  }
+  } 
 }
 
 
@@ -443,5 +441,8 @@ function compareSelections() {
     feedbackBlack.html(blackCounter);
     feedbackRed.html(redCounter);
     console.log(comparison);
+    if (player.tries === 9) {
+      player.hasLost = true; 
+    }
   }
 }

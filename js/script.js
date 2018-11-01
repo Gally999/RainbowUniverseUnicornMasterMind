@@ -1,7 +1,7 @@
 // objet Player
 var player = {
-  coordinates: square0,
-  currentSelection: "grey",
+  coordinates: "",
+  currentSelection: "",
   tries: 0,
   choices: [],
   hasWon: false,
@@ -25,8 +25,8 @@ var square3 = $("#" + row + "-3");
 
  startBtn.click(function() {
    console.log("coucou start");
-   resetGame();
    refreshVars();
+   resetGame();
    flushPlayerSelection();
    generateMasterColors();
    activateNTry();
@@ -38,7 +38,7 @@ var square3 = $("#" + row + "-3");
 
  submitBtn.click(function() {
    console.log("coucou submit");
-   console.log(player.choices);
+   submitBtn.hide();
    pushSelection();
    deactivateNTry();
    if (player.choices.length === 4) {
@@ -46,6 +46,7 @@ var square3 = $("#" + row + "-3");
      hasWon();
      hasLost();
      flushPlayerSelection();
+     
      incrementTries();
      refreshVars()
      activateNTry();
@@ -56,6 +57,7 @@ var square3 = $("#" + row + "-3");
  var playAgainBtn = $(".restart");
 
  playAgainBtn.click(function() {
+ 
   resetGame();
   refreshVars();
   flushPlayerSelection();
@@ -63,7 +65,28 @@ var square3 = $("#" + row + "-3");
   activateNTry();
  });
 
-
+function displaySubmitBtn() {
+    var colors = ["white", "yellow", "pink", "purple", "blue", "green"];
+    var colorsStaged = [];
+    for (var i = 0; i < colors.length; i++) {
+      if (square0.hasClass(colors[i])) {
+        colorsStaged.push(true);
+      }
+      if (square1.hasClass(colors[i])) {
+        colorsStaged.push(true);
+      }
+      if (square2.hasClass(colors[i])) {
+        colorsStaged.push(true);
+      }
+      if (square3.hasClass(colors[i])) {
+        colorsStaged.push(true);
+      }
+    }
+    if ((colorsStaged.length === 4) && (!colorsStaged.includes(false))) {
+      console.log(colorsStaged);
+      submitBtn.show();
+    }
+}
 
 // Fonction qui active le choix des couleurs
 function activateClick() {
@@ -81,38 +104,43 @@ function activateClick() {
     console.log("coucou white");
     player.currentSelection = "white";
     activateColor();
+    displaySubmitBtn();
   });
   
   colorYellow.click(function() {
     console.log("coucou yellow");
     player.currentSelection = "yellow";
     activateColor();
+    displaySubmitBtn();
   });
   
   colorPink.click(function() {
     console.log("coucou pink");
     player.currentSelection = "pink";
     activateColor();
+    displaySubmitBtn();
   });
   
   colorPurple.click(function() {
     console.log("coucou purple");
     player.currentSelection = "purple";
     activateColor();
+    displaySubmitBtn();
   });
   
   colorBlue.click(function() {
     console.log("coucou blue");
     player.currentSelection = "blue";
     activateColor();
+    displaySubmitBtn();
   });
   
   colorGreen.click(function() {
     console.log("coucou green");
     player.currentSelection = "green";
     activateColor();
+    displaySubmitBtn();
   });
-  
 }
 
 // Fonction qui modifie la class de la case par couleur
@@ -161,9 +189,10 @@ function generateMasterColors() {
 
  
   // Adds up to the player.tries and refreshes the variables 
-  function incrementTries() {
-    player.tries++;
-  }
+function incrementTries() {
+  player.tries++;
+}
+
 function refreshVars() {
   if (player.tries === 10) {
     player.hasLost = true; 
@@ -209,7 +238,7 @@ function refreshVars() {
   // Désactive le clic de la rangée qui vient d'être cliquée
   function deactivateNTry() {
     
-    square0.toggleClass("inactive");
+    square0.addClass("inactive");
     square1.addClass("inactive");
     square2.addClass("inactive");
     square3.addClass("inactive");
@@ -223,8 +252,6 @@ function refreshVars() {
       $(".master1").addClass(master.colors[1]);
       $(".master2").addClass(master.colors[2]);
       $(".master3").addClass(master.colors[3]);
-
-      console.log(master.colors);
     }
   } 
 
@@ -322,7 +349,7 @@ function refreshVars() {
     $(".master2").removeClass("white yellow pink purple blue green");
     $(".master3").removeClass("white yellow pink purple blue green");
     $(".popup-lost").removeClass("showing");
-    $(".popup-win").removeClass("showing");
+    $(".popup-won").removeClass("showing");
     master.colors = [];
     player.hasWon = false;
     player.hasLost = false;
@@ -331,11 +358,6 @@ function refreshVars() {
 
 
   function compareSelections() {
-    // var feedback0 = $("#" + (row + 10) + "-0");
-    // var feedback1 = $("#" + (row + 10) + "-1");
-    // var feedback2 = $("#" + (row + 10) + "-2");
-    // var feedback3 = $("#" + (row + 10) + "-3");
-    // feedbackArray = [feedback0, feedback1, feedback2, feedback3];
     var comparison = [];
     var blackCounter = 0;
     var redCounter = 0;
@@ -346,20 +368,16 @@ function refreshVars() {
       } else {
         comparison.push(false);
       }
-      // if (comparison[i] === true) {
-      //   // feedbackArray[i].addClass("black");
-      // }
     } 
     for (var j = 0; j < comparison.length; j++) {
       if (comparison[j] === false) {
         if (master.colors.includes(player.choices[j])) {
-          //feedbackArray[j].addClass("red");
           redCounter++;
         }
       }
     }
-    var feedbackBlack = $("#"+row+"-4");
-    var feedbackRed = $("#"+row+"-5");
+    var feedbackBlack = $("#" + row + "-4");
+    var feedbackRed = $("#" + row + "-5");
     if (blackCounter === 4) {
       player.hasWon = true;
     } else {

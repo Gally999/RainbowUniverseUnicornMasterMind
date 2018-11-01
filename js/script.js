@@ -6,6 +6,7 @@ var player = {
   choices: [],
   hasWon: false,
   hasLost: false,
+  duplicate: false,
 };
 
 var master = {
@@ -48,6 +49,7 @@ submitBtn.click(function() {
   console.log("coucou submit");
   submitBtn.hide();
   pushSelection();
+  lookForDuplicate();
   deactivateNTry();
     if (player.choices.length === 4) {
       compareSelections();
@@ -74,6 +76,10 @@ submitBtn.click(function() {
   activateBreathing();
   displayGoodLuck();
  });
+
+ $(".understood").click(function() {
+  $(".duplicate").removeClass("showing");
+});
 
 function activateBreathing() {
   // Active le flickr FX sur la ligne concernée
@@ -133,6 +139,7 @@ function activateClick() {
     activateColor();
     displaySubmitBtn();
     clearBreathing();
+    lookForDuplicate();
   });
   
   colorYellow.click(function() {
@@ -140,7 +147,8 @@ function activateClick() {
     player.currentSelection = "yellow";
     activateColor();
     displaySubmitBtn();
-    clearBreathing()
+    clearBreathing();
+    lookForDuplicate();
   });
   
   colorPink.click(function() {
@@ -149,6 +157,7 @@ function activateClick() {
     activateColor();
     displaySubmitBtn();
     clearBreathing();
+    lookForDuplicate();
   });
   
   colorPurple.click(function() {
@@ -157,6 +166,7 @@ function activateClick() {
     activateColor();
     displaySubmitBtn();
     clearBreathing();
+    lookForDuplicate();
   });
   
   colorBlue.click(function() {
@@ -165,6 +175,7 @@ function activateClick() {
     activateColor();
     displaySubmitBtn();
     clearBreathing();
+    lookForDuplicate();
   });
   
   colorGreen.click(function() {
@@ -173,6 +184,7 @@ function activateClick() {
     activateColor();
     displaySubmitBtn();
     clearBreathing();
+    lookForDuplicate();
   });
 }
 
@@ -324,14 +336,26 @@ function hasLost() {
   }
 }
 
-  // Block la couleur si déjà choisie une fois sur une case autour (ou alors bloquer si plusieurs lors du submit)
-  // function blockColor(square) {
-  //   if (square !== square0) {
-  //   (square1.hasClass("white")) {
-  //     colorWhite.addClass("blocked");
-  //     }
-  //   }
-  // }
+  // Si doublon dans array player.choices alors on bloque le submit et on display un message explicatif 
+  function lookForDuplicate() {
+    var duplicates = [];
+    if (player.choices.length === 4) {
+      duplicates.push(player.choices[0]);
+      for (var i = 1; i < player.choices.length; i++) {
+          if (duplicates.indexOf(player.choices[i]) === -1) {
+            duplicates.push(player.choices[i]);  
+          }
+      }
+      if (duplicates.length < 4) {
+          $(".duplicate").addClass("showing");
+      }
+      console.log("duplicate : " + player.duplicate);
+    }    
+  }
+
+  
+  
+ 
 
 function pushSelection() {
   if (square0.hasClass("white")) {

@@ -29,6 +29,7 @@ var startBtn = $(".info button");
 
 startBtn.click(function() {
   console.log("coucou start");
+  startStopBreathing();
   refreshVars();
   resetGame();
   flushPlayerSelection();
@@ -232,7 +233,6 @@ function refreshVars() {
     square3 = $("#" + row + "-3");
   } 
 }
-
 
 // Active la rangée à cliquer + rend clickable chaque case 
 function activateNTry() {
@@ -445,4 +445,8 @@ function compareSelections() {
       player.hasLost = true; 
     }
   }
+}
+
+function startStopBreathing() {
+  startBtn.removeClass("btn-breathe");
 }

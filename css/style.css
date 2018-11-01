@@ -15,7 +15,7 @@ green = #99ff99
 }
 
 body {
-  font-family: 'Handlee', cursive; 
+  font-family: 'Courgette', cursive;
   /*font-family: 'Handlee', cursive;
   font-family: 'Architects Daughter', cursive; */
 }
@@ -99,13 +99,22 @@ th, td {
   width: 200px;
   margin: 30px;
   padding: 15px;
-  font-family: 'Architects Daughter', cursive; 
-  font-size: 20px;
-  color: #fc80a5;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 25px;
+  color: #e30889;
   font-weight: bold;
   border-radius: 5px;
   background-image: linear-gradient(to bottom right, #fc80a5, #bf8fcc, #76d7ea, #99ff99, #ffff9f);
   text-shadow: 2px -1px 0 #555253;
+}
+
+.btn-breathe {
+  animation: btn-breathe 4s linear infinite normal;
+}
+
+.info p {
+  font-weight: bold;
+  margin: 20px;
 }
 
 .white {
@@ -161,8 +170,8 @@ th, td {
   position: absolute;
   top: 0;
   left: 0;
-  width: 60%;
-  height: 60%;
+  width: 75%;
+  height: 38%;
 }
 
 .popup-won {
@@ -170,14 +179,13 @@ th, td {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 70%;
   background-color: rgb(152, 235, 228);
   color: black;
-  font-family: 'Architects Daughter', cursive; 
   text-align: center; 
   border-radius: 50px;
-  border: 3px solid #bf8fcc;
+  border: 3px solid #e30889;
 }
 
 .popup-lost {
@@ -185,14 +193,13 @@ th, td {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 80%;
   background-color: rgb(152, 235, 228);
   color: black;
-  font-family: 'Architects Daughter', cursive;
   text-align: center; 
   border-radius: 50px;
-  border: 3px solid #bf8fcc;
+  border: 3px solid #e30889;
 }
 
 
@@ -214,8 +221,8 @@ th, td {
 .showing {
   opacity: 1;
   position: absolute;
-  top: 60%;
-  left: 55%;
+  top: 110%;
+  left: 42%;
 }
 
 .breathe {
@@ -246,6 +253,19 @@ th, td {
   100% {
     background-color:  #C2CDFF;
     transform: scale(0.95);
+  }
+}
 
+@keyframes btn-breathe {
+  0% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.9);
   }
 }

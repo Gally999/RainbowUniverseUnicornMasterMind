@@ -140,7 +140,7 @@ th, td {
 }
 
 .red {
-  background-color: #f16868;
+  background-color: #E8757D;
   font-family: 'Pacifico', cursive;
   font-size: 20px;
   color: white;
@@ -218,3 +218,34 @@ th, td {
   left: 55%;
 }
 
+.breathe {
+  animation: breathe 7s ease-out infinite normal;
+}
+
+@keyframes breathe {
+  0% {
+    background-color: #C2CDFF;
+    transform: scale(0.95);
+  }
+
+  25% {
+    background-color: #F5C2FF;
+    transform: scale(1);
+  }
+
+  50% {
+    background-color: #B7D5FF;
+    transform: scale(0.95);
+  }
+
+  75% {
+    background-color: #F5C2FF;
+    transform: scale(1);
+  }
+
+  100% {
+    background-color:  #C2CDFF;
+    transform: scale(0.95);
+
+  }
+}

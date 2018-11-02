@@ -33,6 +33,16 @@ header {
   background-image: linear-gradient(to right, #fc80a5, #bf8fcc, #76d7ea, #99ff99, #ffff9f, #fc80a5);
 }
 
+.clouds {
+  width: 100%;
+  height: 100px;
+  background-image: url("../img/cloud_repeat.png");
+  background-size: 12%;
+  background-repeat: repeat-x;
+  position: absolute;
+  top: 210px;
+}
+
 .hello {
   width: 310px;
   height: 250px;
@@ -40,12 +50,14 @@ header {
   background-size: 80%;
   background-repeat: no-repeat;
   margin-right: -300px;
+  z-index: 1;
 }
 
 main {
   display: flex;
   justify-content: space-evenly;
   background-image: linear-gradient(to bottom right, #fc80a580, #bf8fcc80, #76d7ea80, #99ff9980, #ffff9f80);
+  margin-top: 20px;
 }
 
 .info, .board, .choices {
@@ -319,4 +331,14 @@ th, td {
   100% {
     transform: scale(0.9);
   }
+}
+
+footer .clouds {
+  width: 100%;
+  height: 100px;
+  background-image: url("../img/cloud_repeat.png");
+  background-size: 12%;
+  background-repeat: repeat-x;
+  position: fixed;
+  top: 865px;
 }

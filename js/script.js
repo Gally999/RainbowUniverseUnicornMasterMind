@@ -6,7 +6,6 @@ var player = {
   choices: [],
   hasWon: false,
   hasLost: false,
-  duplicate: false,
 };
 
 var master = {
@@ -59,6 +58,7 @@ submitBtn.click(function() {
       incrementTries();
       refreshVars()
       activateNTry();
+      player.coordinates = "";
       activateBreathing();
     }
 });
@@ -349,7 +349,6 @@ function hasLost() {
       if (duplicates.length < 4) {
           $(".duplicate").addClass("showing");
       }
-      console.log("duplicate : " + player.duplicate);
     }    
   }
 

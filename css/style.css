@@ -24,6 +24,7 @@ header {
   display: flex;
   justify-content: space-around;
   text-align: center;
+  white-space: nowrap;
   font-family: 'Pacifico', cursive;
   font-size: 38px;
   text-shadow: 10px -5px 0 #fc80a5;
@@ -54,12 +55,16 @@ header {
 }
 
 main {
-  display: flex;
-  justify-content: space-evenly;
   background-image: linear-gradient(to bottom right, #fc80a580, #bf8fcc80, #76d7ea80, #99ff9980, #ffff9f80);
   margin-top: 5px;
   z-index: 2;
   height: 780px;
+}
+
+.blocks {
+  display: flex;
+  justify-content: space-evenly;
+  padding-right: 25px;
 }
 
 .info, .board, .choices {
@@ -69,7 +74,7 @@ main {
 
 .info {
   width: 25%;
-  font-size: 25px;
+  font-size: 22px;
   text-align: center;
 }
 
@@ -121,7 +126,7 @@ th, td {
 .board button, .info button, .restart, .understood {
   width: 210px;
   margin: 30px;
-  padding: 15px;
+  padding: 10px;
   font-family: 'Patrick Hand', cursive;
   font-size: 25px;
   color: #e30889;
@@ -130,6 +135,7 @@ th, td {
   background-image: linear-gradient(to bottom right, #fc80a5, #bf8fcc, #76d7ea, #99ff99, #ffff9f);
   text-shadow: 2px -1px 0 #555253;
   z-index: 1;
+  outline: none;
 }
 
 .btn-breathe {
@@ -247,9 +253,9 @@ th, td {
   background-image: url("../img/goodLuck.png");
   background-size: 80%;
   background-repeat: no-repeat;
-  position: fixed;
-  top: 60%;
-  left: 86%;
+  position: absolute;
+  top: 130%;
+  left: 113%;
 }
 
 .duplicate {

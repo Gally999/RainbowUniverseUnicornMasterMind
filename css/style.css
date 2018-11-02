@@ -25,28 +25,28 @@ header {
   justify-content: space-around;
   text-align: center;
   font-family: 'Pacifico', cursive;
-  font-size: 40px;
+  font-size: 38px;
   text-shadow: 10px -5px 0 #fc80a5;
   color: white; 
   height: 200px;
-  padding-top: 50px;
+  padding-top: 35px;
   background-image: linear-gradient(to right, #fc80a5, #bf8fcc, #76d7ea, #99ff99, #ffff9f, #fc80a5);
 }
 
 .clouds {
   width: 100%;
-  height: 100px;
+  height: 150px;
   background-image: url("../img/cloud_repeat.png");
-  background-size: 12%;
+  background-size: 13%;
   background-repeat: repeat-x;
   position: absolute;
-  top: 210px;
+  top: 175px;
 }
 
 .hello {
   width: 310px;
   height: 250px;
-  background-image: url("../img/Hi.webp");
+  background-image: url("../img/Hi.png");
   background-size: 80%;
   background-repeat: no-repeat;
   margin-right: -300px;
@@ -57,7 +57,9 @@ main {
   display: flex;
   justify-content: space-evenly;
   background-image: linear-gradient(to bottom right, #fc80a580, #bf8fcc80, #76d7ea80, #99ff9980, #ffff9f80);
-  margin-top: 20px;
+  margin-top: 5px;
+  z-index: 2;
+  height: 780px;
 }
 
 .info, .board, .choices {
@@ -117,16 +119,17 @@ th, td {
 }
 
 .board button, .info button, .restart, .understood {
-  width: 200px;
+  width: 210px;
   margin: 30px;
   padding: 15px;
   font-family: 'Patrick Hand', cursive;
   font-size: 25px;
   color: #e30889;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 30px;
   background-image: linear-gradient(to bottom right, #fc80a5, #bf8fcc, #76d7ea, #99ff99, #ffff9f);
   text-shadow: 2px -1px 0 #555253;
+  z-index: 1;
 }
 
 .btn-breathe {
@@ -201,7 +204,8 @@ th, td {
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 70%;
+  min-width: 600px;
+  height: 270px;
   background-color: rgb(152, 235, 228);
   color: black;
   text-align: center; 
@@ -215,7 +219,8 @@ th, td {
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 80%;
+  min-width: 600px;
+  height: 270px;
   background-color: rgb(152, 235, 228);
   color: black;
   text-align: center; 
@@ -223,10 +228,14 @@ th, td {
   border: 3px solid #e30889;
 }
 
+.popup-content {
+  padding-left: 50px;
+}
+
 .happy-unicorn {
   width: 320px;
   height: 260px;
-  background-image: url("../img/thumbUp.webp");
+  background-image: url("../img/thumbUp.png");
   background-size: 80%;
   background-repeat: no-repeat;
 }
@@ -235,7 +244,7 @@ th, td {
   display: none;
   width: 320px;
   height: 260px;
-  background-image: url("../img/goodLuck.webp");
+  background-image: url("../img/goodLuck.png");
   background-size: 80%;
   background-repeat: no-repeat;
   position: fixed;
@@ -244,17 +253,18 @@ th, td {
 }
 
 .duplicate {
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 70%;
-    background-color: rgb(152, 235, 228);
-    color: black;
-    text-align: center; 
-    border-radius: 50px;
-    border: 3px solid #e30889;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-width: 600px;
+  height: 270px;
+  background-color: rgb(152, 235, 228);
+  color: black;
+  text-align: center; 
+  border-radius: 50px;
+  border: 3px solid #e30889;
 }
 
 .duplicate h2 {
@@ -264,7 +274,7 @@ th, td {
 .shit-happens {
   width: 320px;
   height: 260px;
-  background-image: url("../img/shitHappens.webp");
+  background-image: url("../img/shitHappens.png");
   background-size: 80%;
   background-repeat: no-repeat;
 }
@@ -272,7 +282,7 @@ th, td {
 .sucks {
   width: 320px;
   height: 260px;
-  background-image: url("../img/Sucks.webp");
+  background-image: url("../img/Sucks.png");
   background-size: 80%;
   background-repeat: no-repeat;
 }
@@ -340,5 +350,5 @@ footer .clouds {
   background-size: 12%;
   background-repeat: repeat-x;
   position: fixed;
-  top: 865px;
+  top: 885px;
 }
